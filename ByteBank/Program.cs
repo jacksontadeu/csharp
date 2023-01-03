@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace ByteBank
 {
-    internal class Program
+    public class Program
     {
 
         static void CadastrarConta(List<string> cpfs, List<string> titulares, List<double> saldos)
@@ -41,7 +41,7 @@ namespace ByteBank
                 }
             }
             Console.Write("Digite o Nome do Titular: ");
-            string nome = Console.ReadLine();
+            string nome = Console.ReadLine().ToUpper();
             cpfs.Add(cpf);
             titulares.Add(nome);
             saldos.Add(0);
@@ -53,7 +53,7 @@ namespace ByteBank
             Console.ReadKey();
             Console.Clear();
         }
-        
+
         static void DeletarConta(List<string> cpfs, List<string> titulares, List<double> saldos)
         {
             Console.Clear();
@@ -69,7 +69,7 @@ namespace ByteBank
                     Console.Write("Digite o CPF do titular: ");
                     cpf = Console.ReadLine();
                 }
-                else if (cpfs.Count ==0)
+                else if (cpfs.Count == 0)
                 {
                     Console.WriteLine("#########################################");
                     Console.WriteLine();
@@ -78,13 +78,13 @@ namespace ByteBank
                     Console.WriteLine("#########################################");
                     Console.ReadKey();
                     Console.Clear();
-                    break;             
-                }   
+                    break;
+                }
                 else
                 {
                     break;
                 }
-               
+
             }
 
 
@@ -162,15 +162,15 @@ namespace ByteBank
                         Console.WriteLine($"CPF: {cpfs[i]} | Titular: {titulares[i]} | Saldo: R$ {saldos[i]:F2}");
                         Console.WriteLine();
                         Console.WriteLine("##################################################################");
-                       
+
                     }
                 }
                 Console.ReadKey();
                 Console.Clear();
             }
-           
+
         }
-            
+
         static void RealizarSaque(List<string> cpfs, List<double> saldos)
         {
             Console.Clear();
@@ -181,52 +181,47 @@ namespace ByteBank
             for (int i = 0; i < cpfs.Count; i++)
             {
                 realizaSaque = cpfs.FindIndex(d => d == cpf);
-                if (realizaSaque < 0)
+            }
+            if (realizaSaque < 0)
+            {
+                Console.WriteLine("#########################################");
+                Console.WriteLine();
+                Console.WriteLine("CPF não cadastrado!!!");
+                Console.WriteLine();
+                Console.WriteLine("#########################################");
+                Console.ReadKey();
+                Console.Clear();
+
+            }
+            else if (realizaSaque >= 0)
+            {
+                Console.Write("Digite o valor do saque: ");
+                saque = double.Parse(Console.ReadLine());
+                if (saldos[realizaSaque] >= saque)
                 {
-                    Console.WriteLine("#########################################");
+                    saldos[realizaSaque] -= saque;
+                    Console.WriteLine("##########################################");
                     Console.WriteLine();
-                    Console.WriteLine("CPF não cadastrado!!!");
+                    Console.WriteLine($"Valor do saque: R$ {saque:F2}");
+                    Console.WriteLine($"Saldo atual: R$ {saldos[realizaSaque]:F2}");
                     Console.WriteLine();
-                    Console.WriteLine("#########################################");
+                    Console.WriteLine("##########################################");
                     Console.ReadKey();
                     Console.Clear();
-                    
-                }
-                else if (realizaSaque >=0)
-                {
-                    Console.Write("Digite o valor do saque: ");
-                    saque = double.Parse(Console.ReadLine());
-                    if (saldos[realizaSaque] >= saque)
-                    {
-                        saldos[realizaSaque] -= saque;
-                        Console.WriteLine("##########################################");
-                        Console.WriteLine();
-                        Console.WriteLine($"Valor do saque: R$ {saque:F2}");
-                        Console.WriteLine($"Saldo atual: R$ {saldos[realizaSaque]:F2}");
-                        Console.WriteLine();
-                        Console.WriteLine("##########################################");
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-                    else
-                    {
-                        Console.WriteLine("##########################################");
-                        Console.WriteLine();
-                        Console.WriteLine("Saldo Insuficente!!!");
-                        Console.WriteLine();
-                        Console.WriteLine("##########################################");
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
                 }
                 else
                 {
-                    break;
+                    Console.WriteLine("##########################################");
+                    Console.WriteLine();
+                    Console.WriteLine("Saldo Insuficente!!!");
+                    Console.WriteLine();
+                    Console.WriteLine("##########################################");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
             }
-            
-        }
 
+        }
         static void RealizarDeposito(List<string> cpfs, List<double> saldos)
         {
             Console.Clear();
@@ -236,43 +231,36 @@ namespace ByteBank
             for (int i = 0; i < cpfs.Count; i++)
             {
                 realizaDeposito = cpfs.FindIndex(d => d == cpf);
-                if (realizaDeposito < 0)
-                {
-                    Console.WriteLine("#########################################");
-                    Console.WriteLine();
-                    Console.WriteLine("CPF não cadastrado!!!");
-                    Console.WriteLine();
-                    Console.WriteLine("#########################################");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-                else if(realizaDeposito >= 0)
-                {
-                    Console.Write("Digite o valor do deposito: ");
-                    double deposito = double.Parse(Console.ReadLine());
-
-                    if (cpfs.Contains(cpf))
-                    {
-                        saldos[realizaDeposito] += deposito;
-                        Console.WriteLine("######################################");
-                        Console.WriteLine();
-                        Console.WriteLine($"Valor do depósito: R$ {deposito:F2}");
-                        Console.WriteLine($"Saldo atual: R$ {saldos[realizaDeposito]:F2}");
-                        Console.WriteLine("Depósito realizado com sucesso!!!");
-                        Console.WriteLine();
-                        Console.WriteLine("######################################");
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-                }
-                else
-                {
-                    break;
-                }
             }
-            
+            if (realizaDeposito < 0)
+            {
+                Console.WriteLine("#########################################");
+                Console.WriteLine();
+                Console.WriteLine("CPF não cadastrado!!!");
+                Console.WriteLine();
+                Console.WriteLine("#########################################");
+                Console.ReadKey();
+                Console.Clear();
+            }
+            else if (realizaDeposito >= 0)
+            {
+                Console.Write("Digite o valor do depósito: ");
+                double deposito = double.Parse(Console.ReadLine());
 
+
+                saldos[realizaDeposito] += deposito;
+                Console.WriteLine("######################################");
+                Console.WriteLine();
+                Console.WriteLine($"Valor do depósito: R$ {deposito:F2}");
+                Console.WriteLine($"Saldo atual: R$ {saldos[realizaDeposito]:F2}");
+                Console.WriteLine("Depósito realizado com sucesso!!!");
+                Console.WriteLine();
+                Console.WriteLine("######################################");
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
+
         static void TotalArmazenadoNoBanco(List<string> cpfs, List<double> saldos)
         {
             Console.Clear();
@@ -310,6 +298,7 @@ namespace ByteBank
                         RealizarDeposito(cpfs, saldos);
                         break;
                     case 3:
+                        RealizarTransferencia(cpfs, saldos);
                         break;
                     case 0:
                         Console.Clear();
@@ -323,6 +312,69 @@ namespace ByteBank
 
         }
 
+        static void RealizarTransferencia(List<string> cpfs, List<double> saldos)
+        {
+            Console.Clear();
+            int realizaTransferencia = 0;
+            Console.Write("CPF do Titular a ser DEBITADO: ");
+            string cpf = Console.ReadLine();
+            for (int i = 0; i < cpfs.Count; i++)
+            {
+                realizaTransferencia = cpfs.FindIndex(d => d == cpf);
+            }
+            if (realizaTransferencia < 0)
+            {
+                Console.WriteLine("#########################################");
+                Console.WriteLine();
+                Console.WriteLine("CPF do titular não encontrado!!!");
+                Console.WriteLine();
+                Console.WriteLine("#########################################");
+                Console.ReadKey();
+                Console.Clear();
+            }
+            else if (realizaTransferencia >= 0)
+            {
+                int recebeTransferencia = 0;
+                double transferencia;
+                Console.Write("CPF do Titular a ser CREDITADO: ");
+                string cpf1 = Console.ReadLine();
+                for (int i = 0; i < cpfs.Count; i++)
+                {
+                    recebeTransferencia = cpfs.FindIndex(e => e == cpf1);
+                }
+                if (recebeTransferencia < 0)
+                {
+                    Console.WriteLine("#########################################");
+                    Console.WriteLine();
+                    Console.WriteLine("CPF do destinatário não encontrado!!!");
+                    Console.WriteLine();
+                    Console.WriteLine("#########################################");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                else if (recebeTransferencia >= 0)
+                {
+                    Console.Write("Digite o valor da transferência: ");
+                    transferencia = double.Parse(Console.ReadLine());
+               
+                    saldos[realizaTransferencia] -= transferencia;
+                    saldos[recebeTransferencia] += transferencia;
+                    Console.WriteLine("PROCESSANDO...");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("######################################");
+                    Console.WriteLine();
+                    Console.WriteLine($"Valor da transferencia: R$ {transferencia:F2}");
+                    Console.WriteLine($"Saldo atual: R$ {saldos[realizaTransferencia]:F2}");
+                    Console.WriteLine("Transferência realizada com sucesso!!!");
+                    Console.WriteLine();
+                    Console.WriteLine("######################################");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            }
+
+
+        }
 
         static void Main(string[] args)
         {
@@ -375,6 +427,8 @@ namespace ByteBank
         }
     }
 }
+
+
 
 
     

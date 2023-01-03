@@ -6,3 +6,11 @@ D:\Users\Jackson\Documents\c#\Exercicio Beecrood\ByteBank\obj\Debug\ByteBank.csp
 D:\Users\Jackson\Documents\c#\Exercicio Beecrood\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
 D:\Users\Jackson\Documents\c#\Exercicio Beecrood\ByteBank\obj\Debug\ByteBank.exe
 D:\Users\Jackson\Documents\c#\Exercicio Beecrood\ByteBank\obj\Debug\ByteBank.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\ByteBank\obj\Debug\ByteBank.csproj.AssemblyReference.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\ByteBank\obj\Debug\ByteBank.csproj.SuggestedBindingRedirects.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\ByteBank\obj\Debug\ByteBank.csproj.CoreCompileInputs.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\ByteBank\obj\Debug\ByteBank.exe
+D:\Users\Jackson\Documents\c#\Projetos Ima\ByteBank\obj\Debug\ByteBank.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\ByteBank\bin\Debug\ByteBank.exe.config
+D:\Users\Jackson\Documents\c#\Projetos Ima\ByteBank\bin\Debug\ByteBank.exe
+D:\Users\Jackson\Documents\c#\Projetos Ima\ByteBank\bin\Debug\ByteBank.pdb
