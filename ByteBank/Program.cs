@@ -13,7 +13,7 @@ namespace ByteBank
     public class Program
     {
 
-        static void CadastrarConta(List<string> cpfs, List<string> titulares, List<double> saldos, List<int> senhas)
+        static void CadastrarConta(List<string> cpfs, List<string> titulares, List<double> saldos, List<string> senhas)
         {
             Console.Clear();
             Console.WriteLine( );
@@ -46,7 +46,20 @@ namespace ByteBank
             Console.Write("Digite o Nome do Titular: ");
             string nome = Console.ReadLine().ToUpper();
             Console.Write("Digite sua senha (4 Dígitos somente números): ");
-            int senha = int.Parse(Console.ReadLine());
+            string senha = getPassword();
+            while (true)
+            {
+                if (senha.Length != 4)
+                {
+                    Console.WriteLine("Senha inválida, tente novamente!!!");
+                    Console.Write("Digite sua senha (4 Dígitos somente números): ");
+                    senha = getPassword();
+                }
+                else
+                {
+                    break;
+                }
+            }
 
             cpfs.Add(cpf);
             titulares.Add(nome);
@@ -61,7 +74,7 @@ namespace ByteBank
             Console.Clear();
         }
 
-        static void DeletarConta(List<string> cpfs, List<string> titulares, List<double> saldos, List<int> senhas)
+        static void DeletarConta(List<string> cpfs, List<string> titulares, List<double> saldos, List<string> senhas)
         {
             Console.Clear();
             int deletaConta = 0;
@@ -162,7 +175,46 @@ namespace ByteBank
                 Console.Clear();
             }
         }
-        static void RealizarSaque(List<string> cpfs, List<string> titulares,List<double> saldos, List<int> senhas)
+        static void ManutencaoContas(List<string> cpfs, List<string> titulares, List<double> saldos, List<string> senhas)
+        {
+            Console.Clear();
+            int opcao;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.WriteLine("==========MENU BYTEBANK==========");
+                Console.WriteLine();
+                Console.WriteLine("1 - Sacar");
+                Console.WriteLine("2 - Depositar");
+                Console.WriteLine("3 - Transferir");
+                Console.WriteLine("0 - Voltar ao Menu Anterior");
+                Console.WriteLine();
+                Console.WriteLine("=================================");
+                Console.Write("Digite a opcão desejada: ");
+                opcao = int.Parse(Console.ReadLine());
+                switch (opcao)
+                {
+                    case 1:
+                        RealizarSaque(cpfs, titulares, saldos, senhas);
+                        break;
+                    case 2:
+                        RealizarDeposito(cpfs, titulares, saldos);
+                        break;
+                    case 3:
+                        RealizarTransferencia(cpfs, titulares, saldos, senhas);
+                        break;
+                    case 0:
+                        Console.Clear();
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida, digite novamente!!!");
+                        break;
+                }
+
+            } while (opcao != 0);
+        }
+        static void RealizarSaque(List<string> cpfs, List<string> titulares,List<double> saldos, List<string> senhas)
         {
             Console.Clear();
             int realizaSaque = 0;
@@ -190,10 +242,10 @@ namespace ByteBank
             else if (realizaSaque >= 0)
             {
                 Console.Write("Informe a senha: ");
-                int senha = int.Parse(Console.ReadLine());
+                string senha = getPassword();
                 while (true)
                 {
-                    if (senhas[realizaSaque] == senha)
+                    if (senhas[realizaSaque].Equals( senha))
                     {
                         break;
                     }
@@ -201,7 +253,7 @@ namespace ByteBank
                     {
                         Console.WriteLine("Senha incorreta, tente novamente!!!");
                         Console.Write("Informe a senha: ");
-                        senha = int.Parse(Console.ReadLine());
+                        senha = getPassword();
                     }
                 }
                 Console.Write("Digite o valor do saque: ");
@@ -282,62 +334,7 @@ namespace ByteBank
                 Console.Clear();
             }
         }
-        static void TotalArmazenadoNoBanco(List<string> cpfs, List<double> saldos)
-        {
-            Console.WriteLine("PROCESSANDO...");
-            Thread.Sleep(3000);
-            Console.Clear();
-            double totalBanco = saldos.Sum();
-            Console.WriteLine();
-            Console.WriteLine("==================CAIXA DO BANCO================");                      
-            Console.WriteLine();
-            Console.WriteLine($"O valor armazenado no caixa no banco R$ {totalBanco:f2}");
-            Console.WriteLine();
-            Console.WriteLine("=================================================");
-            Console.ReadKey();
-            Console.Clear();
-        }
-        static void ManutencaoContas(List<string> cpfs, List<string> titulares,List<double> saldos, List<int> senhas)
-        {
-            Console.Clear();
-            int opcao;       
-            do
-            {
-                Console.Clear();
-                Console.WriteLine();
-                Console.WriteLine("==========MENU BYTEBANK==========");                             
-                Console.WriteLine();
-                Console.WriteLine("1 - Sacar");
-                Console.WriteLine("2 - Depositar");
-                Console.WriteLine("3 - Transferir");
-                Console.WriteLine("0 - Voltar ao Menu Anterior");
-                Console.WriteLine();
-                Console.WriteLine("=================================");
-                Console.Write("Digite a opcão desejada: ");
-                opcao = int.Parse(Console.ReadLine());
-                switch (opcao)
-                {
-                    case 1:                        
-                        RealizarSaque(cpfs,titulares, saldos,senhas);
-                        break;
-                    case 2:
-                        RealizarDeposito(cpfs, titulares,saldos);
-                        break;
-                    case 3:
-                        RealizarTransferencia(cpfs,titulares, saldos,senhas);
-                        break;
-                    case 0:                   
-                        Console.Clear();
-                        break;
-                    default:
-                        Console.WriteLine("Opção inválida, digite novamente!!!");
-                        break;
-                }
-
-            } while (opcao != 0);
-
-        }
-        static void RealizarTransferencia(List<string> cpfs, List<string> titulares,List<double> saldos, List<int> senhas)
+        static void RealizarTransferencia(List<string> cpfs, List<string> titulares, List<double> saldos, List<string> senhas)
         {
             Console.Clear();
             int realizaTransferencia = 0;
@@ -364,10 +361,10 @@ namespace ByteBank
             else if (realizaTransferencia >= 0)
             {
                 Console.Write("Informe a senha: ");
-                int senha = int.Parse(Console.ReadLine());
+                string senha = getPassword();
                 while (true)
                 {
-                    if (senhas[realizaTransferencia] == senha)
+                    if (senhas[realizaTransferencia].Equals(senha))
                     {
                         break;
                     }
@@ -375,7 +372,7 @@ namespace ByteBank
                     {
                         Console.WriteLine("Senha incorreta, tente novamente!!!");
                         Console.Write("Informe a senha: ");
-                        senha = int.Parse(Console.ReadLine());
+                        senha = getPassword();
                     }
                 }
                 int recebeTransferencia = 0;
@@ -401,7 +398,7 @@ namespace ByteBank
                     Console.Write("Digite o valor da transferência: ");
                     transferencia = double.Parse(Console.ReadLine());
 
-                    if ( transferencia > saldos[realizaTransferencia])
+                    if (transferencia > saldos[realizaTransferencia])
                     {
                         Console.WriteLine("PROCESSANDO...");
                         Thread.Sleep(3000);
@@ -438,15 +435,59 @@ namespace ByteBank
                 }
             }
         }
-        
+
+        static void TotalArmazenadoNoBanco(List<string> cpfs, List<double> saldos)
+        {
+            Console.WriteLine("PROCESSANDO...");
+            Thread.Sleep(3000);
+            Console.Clear();
+            double totalBanco = saldos.Sum();
+            int i = 0;
+            for (i = 0; i < cpfs.Count; i++)
+            {
+
+            }
+            Console.WriteLine();
+            Console.WriteLine("==================CAIXA DO BANCO================");                      
+            Console.WriteLine();
+            Console.WriteLine($"O valor armazenado no caixa no banco R$ {totalBanco:f2}");
+            Console.WriteLine();
+            Console.WriteLine($"Total de {i} conta(s) cadastrada(s)");
+            Console.WriteLine("=================================================");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        static string getPassword()
+        {
+            var pass = string.Empty;
+            ConsoleKey key;
+            do
+            {
+                var keyInfo = Console.ReadKey(intercept: true);
+                key = keyInfo.Key;
+
+                if (key == ConsoleKey.Backspace && pass.Length > 0)
+                {
+                    Console.Write("\b \b");
+                    //pass = pass[0..^1];
+                }
+                else if (!char.IsControl(keyInfo.KeyChar))
+                {
+                    Console.Write("*");
+                    pass += keyInfo.KeyChar;
+                }
+            } while (key != ConsoleKey.Enter);
+
+            Console.WriteLine();
+            return pass;
+        }
         static void Main(string[] args)
         {
             List<string> cpfs = new List<string>();
             List<string> titulares = new List<string>();
             List<double> saldos = new List<double>();
-            List<int> senhas = new List<int>();
-            List<string> cpfslogados = new List<string>();  
-
+            List<string> senhas = new List<string>();
+           
             int opcao;
             do
             {
