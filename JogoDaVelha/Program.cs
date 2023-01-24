@@ -163,7 +163,6 @@ namespace JogoDaVelha
                 if (campo[jogada - 1] == 'X' || campo[jogada - 1] == 'O')
                 {
                     Console.WriteLine("Jogada inválida, tente novamente!!!");
-                    Console.Write($"Digite a jogada {jogador1}: ");
                     jogada = int.Parse(Console.ReadLine());
                 }
                 else

@@ -1,0 +1,16 @@
+D:\Users\Jackson\Documents\c#\Projetos Ima\XadrezPOO\obj\Debug\Xadrez.csproj.AssemblyReference.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\XadrezPOO\obj\Debug\Xadrez.csproj.SuggestedBindingRedirects.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\XadrezPOO\obj\Debug\Xadrez.csproj.CoreCompileInputs.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\XadrezPOO\obj\Debug\XadrezPOO.exe
+D:\Users\Jackson\Documents\c#\Projetos Ima\XadrezPOO\obj\Debug\XadrezPOO.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\XadrezPOO\bin\Debug\XadrezPOO.exe.config
+D:\Users\Jackson\Documents\c#\Projetos Ima\XadrezPOO\bin\Debug\XadrezPOO.exe
+D:\Users\Jackson\Documents\c#\Projetos Ima\XadrezPOO\bin\Debug\XadrezPOO.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\Xadrez\bin\Debug\XadrezPOO.exe.config
+D:\Users\Jackson\Documents\c#\Projetos Ima\Xadrez\bin\Debug\XadrezPOO.exe
+D:\Users\Jackson\Documents\c#\Projetos Ima\Xadrez\bin\Debug\XadrezPOO.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\Xadrez\obj\Debug\Xadrez.csproj.AssemblyReference.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\Xadrez\obj\Debug\Xadrez.csproj.SuggestedBindingRedirects.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\Xadrez\obj\Debug\Xadrez.csproj.CoreCompileInputs.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\Xadrez\obj\Debug\XadrezPOO.exe
+D:\Users\Jackson\Documents\c#\Projetos Ima\Xadrez\obj\Debug\XadrezPOO.pdb

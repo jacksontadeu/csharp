@@ -3,7 +3,7 @@
     public class ContaBancaria
     {
         public string Titular { get; set; }
-        public string Cpf { get; set; }
+        public string Cpf { get; private set; }
         public double Saldo { get; set; }
         public double Limite { get; set; }
         public string TipoConta { get; set; }
