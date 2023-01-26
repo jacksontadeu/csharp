@@ -23,6 +23,7 @@ namespace JogoDaVelha
         static int empates = 0;
         static int partidas = 0;
         static char[] campo = new char[9] { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        
 
 
         static int VerificarGanhador(char[] campo)
@@ -68,25 +69,12 @@ namespace JogoDaVelha
         static void CadastrarJogador()
         {
             Console.WriteLine("===== JOGO DA VELHA =====");
+            Console.WriteLine( );
             Console.Write("Nome do Jogador 1: ");
             jogador1 = Console.ReadLine().ToUpper();
-
+            Console.WriteLine();
             Console.Write("Nome do Jogador 2: ");
             jogador2 = Console.ReadLine().ToUpper();
-        }
-
-        static void Main(string[] args)
-        {
-            CadastrarJogador();
-            while(opcao != "N")
-            {
-                IniciarJogo();
-                RealizarJogadas();                
-                Console.Write("Deseja jogar outra partida (S / N): ");
-                opcao = Console.ReadLine().ToUpper();
-                
-            }
-            VerEstatistica();
         }
         static void RealizarJogadas()
         {
@@ -96,8 +84,10 @@ namespace JogoDaVelha
                 {
                     Console.Write($"Digite a jogada {jogador1}: ");
                     jogada = int.Parse(Console.ReadLine());
-                    VerificarJogada();                                        
-                    VerTabuleiro(campo);
+                    VerificarJogada();
+                    Console.Clear();
+                    DadosDaPartida();
+                    Tabuleiro(campo);
                     int vencedor = VerificarGanhador(campo);
                     if (vencedor == 1 && i % 2 == 0)
                     {
@@ -105,7 +95,6 @@ namespace JogoDaVelha
                         vitoriaJogador1++;
                         break;
                     }
-                    
                     else if (vencedor == 0 && i == 8)
                     {
                         Console.WriteLine("Deu empate!!!");
@@ -117,8 +106,10 @@ namespace JogoDaVelha
                 {
                     Console.Write($"Digite a jogada {jogador2}: ");
                     jogada = int.Parse(Console.ReadLine());
-                    VerificarJogada();                    
-                    VerTabuleiro(campo);
+                    VerificarJogada();
+                    Console.Clear();
+                    DadosDaPartida();
+                    Tabuleiro(campo);
                     int vencedor = VerificarGanhador(campo);
                     if (vencedor == 1 && i % 2 == 1)
                     {
@@ -126,7 +117,6 @@ namespace JogoDaVelha
                         vitoriaJogador2 +=1;
                         break;
                     }
-                    
                     else if (vencedor == 0 && i == 8)
                     {
                         Console.WriteLine("Deu empate!!!");
@@ -134,18 +124,11 @@ namespace JogoDaVelha
                         break;
                     }
                 }
-                
             }
             Console.ReadKey();
         }
-
-        static void VerTabuleiro(char[] campo)
+        static void Tabuleiro(char[] campo)
         {
-            Console.Clear();
-            Console.WriteLine("===== JOGO DA VELHA =====");
-            Console.WriteLine($"{jogador1} joga com {jog1}");
-            Console.WriteLine($"{jogador2} joga com {jog2}");
-            Console.WriteLine($"Partida {partidas}");
             Console.WriteLine("     |     |            ");
             Console.WriteLine($"  {campo[0]}  |  {campo[1]}  |  {campo[2]}  ");
             Console.WriteLine($"_____|_____|_____");
@@ -155,6 +138,14 @@ namespace JogoDaVelha
             Console.WriteLine("     |     |            ");
             Console.WriteLine($"  {campo[6]}  |  {campo[7]}  |  {campo[8]}  ");
             Console.WriteLine("     |     |            ");
+        }
+        static void DadosDaPartida()
+        {
+            Console.WriteLine("===== JOGO DA VELHA =====");
+            Console.WriteLine();
+            Console.WriteLine($"{jogador1} joga com {jog1}");
+            Console.WriteLine($"{jogador2} joga com {jog2}");
+            Console.WriteLine($"Partida {partidas}");
         }
         static void VerificarJogada()
         {
@@ -178,31 +169,16 @@ namespace JogoDaVelha
                         campo[jogada - 1] = jog2;
                         break;
                     }
-
                 }
-               
             }
         }
         static void IniciarJogo()
         {
             Console.Clear();
             campo = new []{ '1', '2', '3', '4', '5', '6', '7', '8', '9' } ;
-            Console.WriteLine("===== JOGO DA VELHA =====");
-            Console.WriteLine();
             partidas++;
-            Console.WriteLine($"{jogador1} joga com {jog1}");
-            Console.WriteLine($"{jogador2} joga com {jog2}");
-            Console.WriteLine($"Partida {partidas}");
-            Console.WriteLine();
-            Console.WriteLine("     |     |            ");
-            Console.WriteLine($"  {campo[0]}  |  {campo[1]}  |  {campo[2]}  ");
-            Console.WriteLine($"_____|_____|_____");
-            Console.WriteLine("     |     |            ");
-            Console.WriteLine($"  {campo[3]}  |  {campo[4]}  |  {campo[5]}  ");
-            Console.WriteLine($"_____|_____|_____");
-            Console.WriteLine("     |     |            ");
-            Console.WriteLine($"  {campo[6]}  |  {campo[7]}  |  {campo[8]}  ");
-            Console.WriteLine("     |     |            ");
+            DadosDaPartida();
+            Tabuleiro(campo);
         }
         
         static void VerEstatistica()
@@ -216,12 +192,19 @@ namespace JogoDaVelha
             Console.WriteLine("======================================");
             Console.ReadKey();
         }
-        
-
-
-
-
-
+       
+        static void Main(string[] args)
+        {
+            CadastrarJogador();
+            while (opcao != "N")
+            {
+                IniciarJogo();
+                RealizarJogadas();
+                Console.Write("Deseja jogar outra partida (S / N): ");
+                opcao = Console.ReadLine().ToUpper();
+            }
+            VerEstatistica();
+        }
     }
 }
 
