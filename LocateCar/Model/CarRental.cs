@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 
 namespace LocateCar.Model
 {
@@ -13,7 +10,18 @@ namespace LocateCar.Model
         public DateTime Finish { get; set; }
         public Car Car { get; set; } = null!;
         public Invoice? Invoice { get; set; }
-        public Pessoa Pessoa { get; set; } = null!;
+        public Pessoa Pessoa { get; private set; } = null!;
 
+        public CarRental(long id, DateTime start, DateTime finish, Car car, Pessoa pessoa)
+        {
+            Id = id;
+            Start = start;
+            Finish = finish;
+            Car = car;
+            Pessoa = pessoa;
+        }
     }
+
+
+   
 }

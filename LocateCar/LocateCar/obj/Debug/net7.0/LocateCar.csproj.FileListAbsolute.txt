@@ -1,0 +1,15 @@
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\LocateCar.csproj.AssemblyReference.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\LocateCar.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\LocateCar.AssemblyInfoInputs.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\LocateCar.AssemblyInfo.cs
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\LocateCar.csproj.CoreCompileInputs.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\bin\Debug\net7.0\LocateCar.exe
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\bin\Debug\net7.0\LocateCar.deps.json
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\bin\Debug\net7.0\LocateCar.runtimeconfig.json
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\bin\Debug\net7.0\LocateCar.dll
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\bin\Debug\net7.0\LocateCar.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\LocateCar.dll
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\refint\LocateCar.dll
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\LocateCar.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\LocateCar.genruntimeconfig.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\LocateCar\obj\Debug\net7.0\ref\LocateCar.dll

@@ -1,0 +1,3 @@
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\obj\Debug\LocateCar.csproj.AssemblyReference.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\obj\Debug\LocateCar.csproj.SuggestedBindingRedirects.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\LocateCar\obj\Debug\LocateCar.csproj.CoreCompileInputs.cache
