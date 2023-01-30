@@ -1,0 +1,15 @@
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.exe
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.deps.json
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.runtimeconfig.json
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.dll
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.csproj.AssemblyReference.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.AssemblyInfoInputs.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.AssemblyInfo.cs
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.csproj.CoreCompileInputs.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.dll
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\refint\BatalhaNaval.dll
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.pdb
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.genruntimeconfig.cache
+D:\Users\Jackson\Documents\c#\Projetos Ima\BatalhaNaval\BatalhaNaval\obj\Debug\net7.0\ref\BatalhaNaval.dll
