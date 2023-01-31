@@ -13,37 +13,66 @@ public class Jogador
     {
         Console.Write("Digite o campo: ");
         campo = int.Parse(Console.ReadLine());
-        while (true)
+        VerificarJogada(jogo, mapa1);
+
+        if (mapa1[campo] != ' ')
         {
-            if (jogo[campo] != ' ')
+            jogo[campo] = mapa1[campo];
+            RegistrarPontuacao(jogo, mapa1);
+        }
+        else
+        {
+            jogo[campo] = '*';
+        }
+        
+    }
+    public void VerificarJogada(char[] jogo, char[] mapa1)
+    {
+        while (jogo[campo] != ' ')
+        {
+            if (jogo[campo] == ' ')
             {
-                Console.WriteLine("Jogada Inválida, digite novamente!!!");
-                
-                Console.Write("Digite o campo: ");
-                campo = int.Parse(Console.ReadLine());
-            }
-            else if (mapa1[campo] != ' ')
-            {
-                jogo[campo] = mapa1[campo];
                 break;
             }
             else
             {
-                jogo[campo] = '*';
-                break;
+                Console.WriteLine("Jogada Inválida, digite novamente!!!");
+                Console.Write("Digite o campo: ");
+                campo = int.Parse(Console.ReadLine());
             }
         }
+
     }
-    public void RegistrarPontucao(char[] jogo, char[] mapa1)
+    public bool AcertarJogada(char[] jogo, char[] mapa1)
+    {
+        if (mapa1[campo] == ' ')
+            return false;
+        return true;
+    }
+    public void RegistrarPontuacao(char[] jogo, char[] mapa1)
     {
         if (mapa1[campo] != ' ')
             this.Pontos++;
-        
+
     }
-    
+    public int Vencedor()
+    {
+        if (Pontos == 6)
+            return 1;
+        return 0;
+    }
+    public override string ToString()
+    {
+        string info = $"Nome: {this.Nome}, Vitoria(s): {this.Vitorias}";
+        return info;
+    }
+
 }
 
-    
+
+
+
+
 
 
 
